@@ -1,11 +1,13 @@
 // Write your code here
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 import {Link} from 'react-router-dom'
 import TeamCard from '../TeamCard'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 
 class Home extends Component {
-  state = {iplData: []}
+  state = {iplData: [], isOnRun: true}
 
   componentDidMount() {
     this.onGetAPI()
@@ -22,11 +24,12 @@ class Home extends Component {
     }))
     this.setState({
       iplData: jsData,
+      isOnRun: false,
     })
   }
 
   render() {
-    const {iplData} = this.state
+    const {iplData, isOnRun} = this.state
     // console.log(iplData)
     return (
       <Link to="/" className="home-link">
@@ -39,11 +42,17 @@ class Home extends Component {
             />
             <h1 className="home-title">IPL Dashboard</h1>
           </div>
-          <ul className="team-list">
-            {iplData.map(eachTeam => (
-              <TeamCard key={eachTeam.id} teamObj={eachTeam} />
-            ))}
-          </ul>
+          {isOnRun ? (
+            <div testid="loader">
+              <Loader type="Oval" color="#ffffff" height={50} width={50} />
+            </div>
+          ) : (
+            <ul className="team-list">
+              {iplData.map(eachTeam => (
+                <TeamCard key={eachTeam.id} teamObj={eachTeam} />
+              ))}
+            </ul>
+          )}
         </div>
       </Link>
     )
