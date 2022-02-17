@@ -1,0 +1,61 @@
+/* Write your CSS here */
+.match-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  align-items: center;
+  color: white;
+  background-color: #1e293b;
+  margin: 16px 10px;
+  width: 300px;
+  height: 350px;
+}
+
+.team-logo {
+  width: 80px;
+}
+
+.match-name {
+  font-size: 20px;
+}
+
+.result {
+  font-size: 14px;
+}
+
+.Won {
+  font-size: 18px;
+  color: #18ed66;
+}
+
+.Lost {
+  font-size: 18px;
+  color: #e31a1a;
+}
+
+@media (max-width: 576px) {
+  .match-item {
+    margin: 16px 10px;
+    width: 225px;
+    height: 305px;
+  }
+
+  .team-logo {
+    width: 66px;
+  }
+
+  .match-name {
+    font-size: 12px;
+  }
+
+  .result {
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+  .match-item {
+    margin: 16px 35px;
+  }
+}

@@ -1,0 +1,45 @@
+/* Write your CSS here */
+.team-item-link {
+  text-decoration: none;
+  color: #ffffff;
+  border: 2px solid #475569;
+  background-color: #ffffff33;
+  border-radius: 13px;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  margin: 16px;
+}
+
+.team-item {
+  display: flex;
+  align-items: center;
+}
+
+.team-pic {
+  width: 70px;
+  height: 80px;
+  margin: 0 16px;
+}
+
+.team-name {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .team-name {
+    font-size: 18px;
+  }
+
+  .team-pic {
+    width: 50px;
+    height: 60px;
+  }
+
+  .team-item-link {
+    width: 250px;
+    height: 100px;
+  }
+}

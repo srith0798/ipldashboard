@@ -1,0 +1,95 @@
+/* Write your CSS here */
+.current-match-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #1e293b;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 955px;
+}
+
+.left-card {
+  display: flex;
+  flex-direction: column;
+  order: 0;
+}
+
+.team-name {
+  font-size: 30px;
+}
+
+.date {
+  font-size: 24px;
+}
+
+.match-info {
+  font-size: 14px;
+}
+
+.current-match-pic {
+  width: 203px;
+}
+
+.right-card {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.match-head {
+  font-size: 20px;
+}
+
+@media (max-width: 576px) {
+  .current-match-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 255px;
+    padding: 20px;
+  }
+
+  .left-card {
+    flex-grow: 1;
+  }
+
+  .current-match-pic {
+    width: 50px;
+  }
+
+  .team-name {
+    font-size: 13px;
+  }
+
+  .date {
+    font-size: 9px;
+  }
+
+  .match-info {
+    font-size: 8px;
+  }
+
+  .right-card {
+    text-align: left;
+    flex-grow: 1;
+    margin-top: 16px;
+    border-top: 1px solid #475569;
+  }
+
+  .match-head {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .current-match-box {
+    width: 555px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+  .current-match-box {
+    width: 755px;
+  }
+}

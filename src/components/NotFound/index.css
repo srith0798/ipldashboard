@@ -1,0 +1,25 @@
+/* Write your CSS here */
+.err-card {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png');
+}
+
+.msg {
+  color: white;
+  font-size: 42px;
+}
+
+@media (max-width: 768px) {
+  .err-card {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png');
+  }
+
+  .msg {
+    font-size: 28px;
+  }
+}
