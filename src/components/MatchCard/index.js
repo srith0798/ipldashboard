@@ -6,7 +6,11 @@ function MatchCard(params) {
   const {result, competingTeam, competingTeamLogo, matchStatus} = matchObj
   return (
     <li className="match-item">
-      <img className="team-logo" src={competingTeamLogo} alt={competingTeam} />
+      <img
+        className="team-logo"
+        src={competingTeamLogo}
+        alt={`competing team ${competingTeam}`}
+      />
       <p className="match-name">{competingTeam}</p>
       <p className="result">{result}</p>
       <p className={`${matchStatus}`}>{matchStatus}</p>
