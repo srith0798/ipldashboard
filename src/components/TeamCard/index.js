@@ -6,7 +6,7 @@ function TeamCard(params) {
   const {teamObj} = params
   const {name, id, teamImageUrl, altText} = teamObj
   return (
-    <Link to={`/ipl/${id}`} className="team-item-link">
+    <Link to={`/team-matches/${id}`} className="team-item-link">
       <li className="team-item">
         <img className="team-pic" src={teamImageUrl} alt={altText} />
         <p className="team-name">{name}</p>
