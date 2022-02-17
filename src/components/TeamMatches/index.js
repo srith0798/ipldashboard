@@ -1,11 +1,14 @@
 // Write your code here
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
 import './index.css'
 
 class TeamMatches extends Component {
-  state = {tempObj: []}
+  state = {tempObj: [], isLoad: true}
 
   componentDidMount() {
     this.getSpecificMatch()
@@ -53,17 +56,18 @@ class TeamMatches extends Component {
     }
     this.setState({
       tempObj: jsObj,
+      isLoad: false,
     })
   }
 
   getImageBanner = () => {
     const {tempObj} = this.state
-    const {headBanner, altTxt, recentMatches, latestMatches} = tempObj
+    const {headBanner, recentMatches, latestMatches} = tempObj
     const trendMatches = recentMatches === undefined ? [] : recentMatches
     const currentMatches = latestMatches === undefined ? '' : latestMatches
     return (
       <div>
-        <img className="match-pic" src={headBanner} alt={altTxt} />
+        <img className="match-pic" src={headBanner} alt="team banner" />
         <h1 className="team-title">Latest Matches</h1>
 
         <LatestMatch details={currentMatches} />
@@ -77,11 +81,17 @@ class TeamMatches extends Component {
   }
 
   render() {
-    const {tempObj} = this.state
+    const {tempObj, isLoad} = this.state
     const {altTxt} = tempObj
     return (
       <div className={`team-bg ${altTxt}`}>
-        <div className="card">{this.getImageBanner()}</div>
+        {isLoad ? (
+          <div testid="loader">
+            <Loader type="Oval" color="#ffffff" height={50} width={50} />
+          </div>
+        ) : (
+          <div className="card">{this.getImageBanner()}</div>
+        )}
       </div>
     )
   }
