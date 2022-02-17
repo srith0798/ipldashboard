@@ -26,7 +26,7 @@ function LatestMatch(params) {
       <img
         className="current-match-pic"
         src={competingTeamLogo}
-        alt={competingTeam}
+        alt={`latest match ${competingTeam}`}
       />
       <div className="right-card">
         <p className="match-head">FirstInnings</p>
